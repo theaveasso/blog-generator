@@ -7,8 +7,8 @@ newtype Structure = Structure String
 
 type    Title     =           String
 
-append_ :: Structure -> Structure -> Structure
-append_ (Structure a) (Structure b) = Structure (a <> b)
+instance Semigroup Structure where
+  (<>) (Structure a) (Structure b) = Structure (a <> b)
 
 getStructureStr :: Structure -> String
 getStructureStr (Structure content) = content 

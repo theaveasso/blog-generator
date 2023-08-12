@@ -8,7 +8,6 @@ module Html (
   , ul_
   , ol_
   , p_
-  , append_
   , render
 ) where
 

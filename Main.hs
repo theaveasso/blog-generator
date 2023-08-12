@@ -54,22 +54,17 @@ txt4 =
 htmlToRender :: Html
 htmlToRender = 
   html_ "t80" $ 
-    append_ 
-      (h1_ "This is heading") 
-      (append_ 
-        (append_
-          (p_ "This is paragraph #1")
-          (p_ "This is paragraph #2")
-        )
-        (append_
-          (p_ "$ % & * ' \" !")
-          (ul_ 
-            [ p_ "item 1"
-            , p_ "item 2"
-            , p_ "item 3"
-          ])
-        )
-      )
+      h1_ "This is heading" <>
+      p_ "This is paragraph #1" <>
+      p_ "This is paragraph #2" <> 
+      p_ "This is paragraph #3" <>
+      p_ "This is paragraph #4" <>
+      p_ "$ % & * ' \" !" <>
+      ul_ 
+        [ p_ "item 1"
+        , p_ "item 2"
+        , p_ "item 3"
+      ]
 
 main :: IO ()
 main = do

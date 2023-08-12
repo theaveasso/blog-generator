@@ -13,3 +13,6 @@ data Structure
   | CodeBlock             [String]
   | OrderedList           [String]
   | UnorderedList         [String]
+  deriving (Show)
+
+
