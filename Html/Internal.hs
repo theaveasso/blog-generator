@@ -1,6 +1,7 @@
 module Html.Internal where
 
 import Data.List
+import GHC.Natural (Natural)
 
 newtype Html      = Html      String
 newtype Structure = Structure String
@@ -9,6 +10,9 @@ type    Title     =           String
 
 instance Semigroup Structure where
   (<>) (Structure a) (Structure b) = Structure (a <> b)
+
+instance Show Structure where
+  show (Structure content) = content
 
 getStructureStr :: Structure -> String
 getStructureStr (Structure content) = content 
@@ -52,8 +56,8 @@ head_ = tag_ "head"
 title_ :: String -> String
 title_ = tag_ "title"
 
-h1_ :: String -> Structure
-h1_ = Structure . tag_ "h1" . escape
+h_ :: Natural -> String -> Structure
+h_ int h = Structure . tag_ ("h" <> show int) $ escape h
 
 ul_ :: [Structure] -> Structure 
 ul_ = Structure . tag_ "ul" . concat . map (tag_ "li" . getStructureStr)

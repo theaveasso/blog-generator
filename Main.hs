@@ -65,6 +65,14 @@ htmlToRender =
         , p_ "item 2"
         , p_ "item 3"
       ]
+-- parse :: String -> Document
+-- parse = parseLines [] . lines 
+
+createParagraph :: [String] -> Document
+createParagraph = Paragraph . unlines . reverse
+
+-- parseLines :: [String] -> [String] -> Document
+-- parseLines [] ys = [createParagraph ys]
 
 main :: IO ()
 main = do

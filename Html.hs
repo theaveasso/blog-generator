@@ -4,10 +4,10 @@ module Html (
   , Title
   , html_
   , pre_
-  , h1_
+  , h_
+  , p_
   , ul_
   , ol_
-  , p_
   , render
 ) where
 
